@@ -1,0 +1,17 @@
+# Arquivos de build/export
+.export/
+.export.cfg
+
+# Cache do Godot
+.import/
+
+# Arquivos específicos do sistema
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Arquivos temporários
+*.tmp
