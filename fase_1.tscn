@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://puffhxw8xgo3"]
+
+[ext_resource type="Script" uid="uid://b7liikkh5m7hg" path="res://fase_1.gd" id="1_ru54l"]
+
+[node name="Fase1_FlorestaTemperada" type="Node2D" unique_id=1803013854]
+script = ExtResource("1_ru54l")
+
+[node name="Cenario" type="Node2D" parent="." unique_id=1313982276]
+
+[node name="ColorRect" type="ColorRect" parent="Cenario" unique_id=1508364502]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.18039216, 0.43529412, 0.2509804, 1)
+
+[node name="Organismos" type="Node2D" parent="." unique_id=210470004]
+
+[node name="UI" type="Node2D" parent="." unique_id=2104938376]
