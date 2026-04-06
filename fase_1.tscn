@@ -15,4 +15,108 @@ color = Color(0.18039216, 0.43529412, 0.2509804, 1)
 
 [node name="Organismos" type="Node2D" parent="." unique_id=210470004]
 
-[node name="UI" type="Node2D" parent="." unique_id=2104938376]
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=3000000001]
+process_mode = 3
+
+[node name="PainelUI" type="Panel" parent="UI_Layer" unique_id=3000000002]
+offset_right = 295.0
+offset_bottom = 400.0
+
+[node name="Margin" type="MarginContainer" parent="UI_Layer/PainelUI" unique_id=3000000003]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PainelUI/Margin" unique_id=3000000004]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Titulo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000005]
+layout_mode = 2
+text = "Projeto Gaia"
+theme_override_font_sizes/font_size = 17
+
+[node name="LabelPontos" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000006]
+layout_mode = 2
+text = "Pontos de Biodiversidade: 100"
+
+[node name="Sep0" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000007]
+layout_mode = 2
+
+[node name="LabelPlantas" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000008]
+layout_mode = 2
+text = "Plantas: 0"
+
+[node name="LabelHerbivoros" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000009]
+layout_mode = 2
+text = "Herbivoros: 0"
+
+[node name="Sep1" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000010]
+layout_mode = 2
+
+[node name="LabelModo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000011]
+layout_mode = 2
+text = "Modo: planta"
+
+[node name="LabelDica" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000012]
+layout_mode = 2
+text = "Clique no terreno para adicionar"
+theme_override_font_sizes/font_size = 11
+
+[node name="Sep2" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000013]
+layout_mode = 2
+
+[node name="LabelEspecie" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000014]
+layout_mode = 2
+text = "Adicionar Especie:"
+
+[node name="HBoxEspecies" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000015]
+layout_mode = 2
+
+[node name="BotaoPlanta" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=3000000016]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Planta [1]
+(10pts)"
+
+[node name="BotaoHerbivoro" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=3000000017]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Herbivoro [2]
+(25pts)"
+
+[node name="Sep3" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000018]
+layout_mode = 2
+
+[node name="LabelTempo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000019]
+layout_mode = 2
+text = "Controle de Tempo:"
+
+[node name="HBoxTempo" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000020]
+layout_mode = 2
+
+[node name="BotaoPausar" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000021]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pausar [P]"
+
+[node name="BotaoNormal" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000022]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Normal [N]"
+
+[node name="BotaoRapido" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000023]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Rapido [R]"
+
+[connection signal="pressed" from="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies/BotaoPlanta" to="." method="_on_botao_planta_pressed"]
+[connection signal="pressed" from="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies/BotaoHerbivoro" to="." method="_on_botao_herbivoro_pressed"]
+[connection signal="pressed" from="UI_Layer/PainelUI/Margin/VBox/HBoxTempo/BotaoPausar" to="." method="_on_botao_pausar_pressed"]
+[connection signal="pressed" from="UI_Layer/PainelUI/Margin/VBox/HBoxTempo/BotaoNormal" to="." method="_on_botao_normal_pressed"]
+[connection signal="pressed" from="UI_Layer/PainelUI/Margin/VBox/HBoxTempo/BotaoRapido" to="." method="_on_botao_rapido_pressed"]
