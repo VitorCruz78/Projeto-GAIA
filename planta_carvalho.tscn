@@ -2,12 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_k051q"]
 [ext_resource type="Script" uid="uid://bw4ex3ng51o85" path="res://planta_carvalho.gd" id="2_fc1wh"]
-[ext_resource type="Texture2D" uid="uid://cegs81b4aoi48" path="res://icon.svg" id="3_bp1sf"]
+[ext_resource type="Texture2D" uid="uid://bk6s2ff31oa7w" path="res://assets/sprites/organismos/planta_carvalho.png" id="3_bp1sf"]
 
 [node name="Planta_Carvalho" unique_id=1094729112 instance=ExtResource("1_k051q")]
 script = ExtResource("2_fc1wh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=147751067]
-self_modulate = Color(0.53333336, 0.90588236, 0.53333336, 1)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_bp1sf")

@@ -1,116 +1,120 @@
 [gd_scene format=3 uid="uid://puffhxw8xgo3"]
 
 [ext_resource type="Script" uid="uid://b7liikkh5m7hg" path="res://fase_1.gd" id="1_ru54l"]
+[ext_resource type="Texture2D" uid="uid://7n64mb4dyyp" path="res://assets/tilesets/floresta_tropical.jpeg" id="2_5s2kv"]
 
 [node name="Fase1_FlorestaTemperada" type="Node2D" unique_id=1803013854]
 script = ExtResource("1_ru54l")
 
 [node name="Cenario" type="Node2D" parent="." unique_id=1313982276]
 
-[node name="ColorRect" type="ColorRect" parent="Cenario" unique_id=1508364502]
+[node name="ColorRect" type="TextureRect" parent="Cenario" unique_id=288916241]
 custom_minimum_size = Vector2(1152, 648)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.18039216, 0.43529412, 0.2509804, 1)
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("2_5s2kv")
 
 [node name="Organismos" type="Node2D" parent="." unique_id=210470004]
 
-[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=3000000001]
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=-1294967295]
 process_mode = 3
 
-[node name="PainelUI" type="Panel" parent="UI_Layer" unique_id=3000000002]
+[node name="PainelUI" type="Panel" parent="UI_Layer" unique_id=-1294967294]
 offset_right = 295.0
 offset_bottom = 400.0
 
-[node name="Margin" type="MarginContainer" parent="UI_Layer/PainelUI" unique_id=3000000003]
+[node name="Margin" type="MarginContainer" parent="UI_Layer/PainelUI" unique_id=-1294967293]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="UI_Layer/PainelUI/Margin" unique_id=3000000004]
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PainelUI/Margin" unique_id=-1294967292]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Titulo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000005]
+[node name="Titulo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967291]
 layout_mode = 2
-text = "Projeto Gaia"
 theme_override_font_sizes/font_size = 17
+text = "Projeto Gaia"
 
-[node name="LabelPontos" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000006]
+[node name="LabelPontos" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967290]
 layout_mode = 2
 text = "Pontos de Biodiversidade: 100"
 
-[node name="Sep0" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000007]
+[node name="Sep0" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967289]
 layout_mode = 2
 
-[node name="LabelPlantas" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000008]
+[node name="LabelPlantas" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967288]
 layout_mode = 2
 text = "Plantas: 0"
 
-[node name="LabelHerbivoros" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000009]
+[node name="LabelHerbivoros" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967287]
 layout_mode = 2
 text = "Herbivoros: 0"
 
-[node name="Sep1" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000010]
+[node name="Sep1" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967286]
 layout_mode = 2
 
-[node name="LabelModo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000011]
+[node name="LabelModo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967285]
 layout_mode = 2
 text = "Modo: planta"
 
-[node name="LabelDica" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000012]
+[node name="LabelDica" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967284]
 layout_mode = 2
-text = "Clique no terreno para adicionar"
 theme_override_font_sizes/font_size = 11
+text = "Clique no terreno para adicionar"
 
-[node name="Sep2" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000013]
+[node name="Sep2" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967283]
 layout_mode = 2
 
-[node name="LabelEspecie" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000014]
+[node name="LabelEspecie" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967282]
 layout_mode = 2
 text = "Adicionar Especie:"
 
-[node name="HBoxEspecies" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000015]
+[node name="HBoxEspecies" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967281]
 layout_mode = 2
 
-[node name="BotaoPlanta" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=3000000016]
+[node name="BotaoPlanta" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=-1294967280]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Planta [1]
 (10pts)"
 
-[node name="BotaoHerbivoro" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=3000000017]
+[node name="BotaoHerbivoro" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxEspecies" unique_id=-1294967279]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Herbivoro [2]
 (25pts)"
 
-[node name="Sep3" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000018]
+[node name="Sep3" type="HSeparator" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967278]
 layout_mode = 2
 
-[node name="LabelTempo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000019]
+[node name="LabelTempo" type="Label" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967277]
 layout_mode = 2
 text = "Controle de Tempo:"
 
-[node name="HBoxTempo" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=3000000020]
+[node name="HBoxTempo" type="HBoxContainer" parent="UI_Layer/PainelUI/Margin/VBox" unique_id=-1294967276]
 layout_mode = 2
 
-[node name="BotaoPausar" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000021]
+[node name="BotaoPausar" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=-1294967275]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Pausar [P]"
 
-[node name="BotaoNormal" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000022]
+[node name="BotaoNormal" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=-1294967274]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Normal [N]"
 
-[node name="BotaoRapido" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=3000000023]
+[node name="BotaoRapido" type="Button" parent="UI_Layer/PainelUI/Margin/VBox/HBoxTempo" unique_id=-1294967273]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Rapido [R]"
