@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dl4uv8wx3ty7q"]
+
+[ext_resource type="Script" uid="uid://go8yza1bc3df0" path="res://scenes/codice_gaia.gd" id="1_codice"]
+
+[node name="CodiceGaia" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_codice")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = -80.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LabelTitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 28
+text = "📖 Códice de Gaia"
+
+[node name="Sep" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="LabelPagina" type="RichTextLabel" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = false
+scroll_active = false
+theme_override_font_sizes/normal_font_size = 18
+text = ""
+
+[node name="Sep2" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="LabelNum" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "Página 1 / 8"
+
+[node name="HBoxBtns" type="HBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="BotaoAnterior" type="Button" parent="Panel/VBox/HBoxBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+text = "← Anterior"
+
+[node name="BotaoVoltar" type="Button" parent="Panel/VBox/HBoxBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+text = "🗺 Mapa"
+
+[node name="BotaoProximo" type="Button" parent="Panel/VBox/HBoxBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(120, 40)
+text = "Próximo →"
+
+[connection signal="pressed" from="Panel/VBox/HBoxBtns/BotaoAnterior" to="." method="_on_botao_anterior_pressed"]
+[connection signal="pressed" from="Panel/VBox/HBoxBtns/BotaoProximo" to="." method="_on_botao_proximo_pressed"]
+[connection signal="pressed" from="Panel/VBox/HBoxBtns/BotaoVoltar" to="." method="_on_botao_voltar_pressed"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://px8ge4tb9zs2n"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_invasora"]
+[ext_resource type="Script" uid="uid://hk4r9pe2wm7d6" path="res://organismos/planta_invasora.gd" id="2_invasora"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/planta_invasora.png" id="3_invasora"]
+
+[node name="Planta_Invasora" unique_id=1007001001 instance=ExtResource("1_invasora")]
+script = ExtResource("2_invasora")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1007001002]
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_invasora")

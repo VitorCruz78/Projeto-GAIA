@@ -1,0 +1,312 @@
+[gd_scene format=3 uid="uid://ck3tu7vw2sx6p"]
+
+[ext_resource type="Script" path="res://scenes/fase_3_deserto.gd" id="1_f3"]
+
+[node name="Fase3_Deserto" type="Node2D"]
+script = ExtResource("1_f3")
+
+[node name="Cenario" type="Node2D" parent="."]
+
+[node name="Fundo" type="ColorRect" parent="Cenario"]
+color = Color(0.82, 0.74, 0.48, 1)
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+
+[node name="Organismos" type="Node2D" parent="."]
+
+[node name="UI_Layer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="TopBar" type="Panel" parent="UI_Layer"]
+anchor_right = 1.0
+offset_bottom = 52.0
+
+[node name="HBox" type="HBoxContainer" parent="UI_Layer/TopBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="LabelPontos" type="Label" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "🌿 BD"
+
+[node name="Sep0" type="VSeparator" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+
+[node name="LabelBioma" type="Label" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 15
+text = "🌵 Deserto"
+
+[node name="Sep1" type="VSeparator" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+
+[node name="LabelObjetivo" type="Label" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "Objetivo: Sobreviva a 2 secas"
+
+[node name="Sep2" type="VSeparator" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+
+[node name="LabelEquilibrioTempo" type="Label" parent="UI_Layer/TopBar/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Secas: 0/2"
+
+[node name="LeftPanel" type="Panel" parent="UI_Layer"]
+offset_top = 55.0
+offset_right = 230.0
+offset_bottom = 592.0
+
+[node name="Margin" type="MarginContainer" parent="UI_Layer/LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/LeftPanel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelTituloPainel" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "ECOSSISTEMA"
+
+[node name="Sep0" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="LabelPlantas" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+text = "🌵 Plantas: 0"
+
+[node name="LabelHerbivoros" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+text = "🦎 Herbívoros: 0"
+
+[node name="LabelCarnivoros" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+text = "🐍 Carnívoros: 0"
+
+[node name="Sep1" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="LabelBarraEquilibrio" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Secas sobrevividas:"
+
+[node name="BarraEquilibrio" type="ProgressBar" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 18)
+value = 0.0
+show_percentage = true
+
+[node name="Sep2" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+
+[node name="LabelEstacao" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+layout_mode = 2
+text = "☀️ Aguardando seca"
+
+[node name="BottomBar" type="Panel" parent="UI_Layer"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+grow_vertical = 0
+
+[node name="HBox" type="HBoxContainer" parent="UI_Layer/BottomBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="BotaoPlanta" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "🌵 Planta
+[1] 10BD"
+
+[node name="BotaoHerbivoro" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "🦎 Herbívoro
+[2] 25BD"
+
+[node name="BotaoCarnivoro" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "🐍 Carnívoro
+[3] 50BD"
+
+[node name="BotaoRemover" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🧬 Evoluir
+(40BD)"
+
+[node name="SepA" type="VSeparator" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+
+[node name="BotaoPausar" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+text = "⏸ [P]"
+
+[node name="BotaoNormal" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+text = "▶ [N]"
+
+[node name="BotaoRapido" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+text = "⏩ x3 [R]"
+
+[node name="BotaoMuitoRapido" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+text = "⏭ x6 [F]"
+
+[node name="SepB" type="VSeparator" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+
+[node name="BotaoMapa" type="Button" parent="UI_Layer/BottomBar/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "🗺 Mapa"
+
+[node name="PanelVitoria" type="Panel" parent="UI_Layer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PanelVitoria"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="LabelVitoria" type="Label" parent="UI_Layer/PanelVitoria/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 20
+text = "🎉 VITÓRIA!
+Deserto sobreviveu às secas!"
+
+[node name="BotaoVitoriaContinuar" type="Button" parent="UI_Layer/PanelVitoria/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 44)
+text = "Continuar → Mapa"
+
+[node name="PanelDerrota" type="Panel" parent="UI_Layer"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -120.0
+offset_right = 300.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PanelDerrota"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 16
+
+[node name="LabelDerrota" type="Label" parent="UI_Layer/PanelDerrota/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 18
+text = "💀 Derrota
+O ecossistema colapsou na seca!"
+
+[node name="BotaoEsquecidaReiniciar" type="Button" parent="UI_Layer/PanelDerrota/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 44)
+text = "🔄 Tentar Novamente"
+
+[node name="PanelNotificacao" type="Panel" parent="UI_Layer"]
+visible = false
+anchor_left = 0.2
+anchor_top = 0.0
+anchor_right = 0.8
+anchor_bottom = 0.0
+offset_top = 58.0
+offset_bottom = 148.0
+grow_horizontal = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PanelNotificacao"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="LabelNotificacao" type="Label" parent="UI_Layer/PanelNotificacao/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text = ""
+
+[node name="BotaoNotificacaoOk" type="Button" parent="UI_Layer/PanelNotificacao/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 28)
+text = "OK"
+
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoPlanta" to="." method="_on_botao_planta_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoHerbivoro" to="." method="_on_botao_herbivoro_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoCarnivoro" to="." method="_on_botao_carnivoro_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoRemover" to="." method="_on_botao_remover_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoPausar" to="." method="_on_botao_pausar_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoNormal" to="." method="_on_botao_normal_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoRapido" to="." method="_on_botao_rapido_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoMuitoRapido" to="." method="_on_botao_muito_rapido_pressed"]
+[connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoMapa" to="." method="_on_botao_mapa_pressed"]
+[connection signal="pressed" from="UI_Layer/PanelVitoria/VBox/BotaoVitoriaContinuar" to="." method="_on_botao_vitoria_continuar_pressed"]
+[connection signal="pressed" from="UI_Layer/PanelDerrota/VBox/BotaoEsquecidaReiniciar" to="." method="_on_botao_derrota_reiniciar_pressed"]
+[connection signal="pressed" from="UI_Layer/PanelNotificacao/VBox/BotaoNotificacaoOk" to="." method="_on_botao_notificacao_ok_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://xf8op2qr7ns1k"]
+
+[ext_resource type="Script" uid="uid://rz0ig6vd1bu4p" path="res://scenes/menu_principal.gd" id="1_menu"]
+
+[node name="MenuPrincipal" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_menu")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 20
+
+[node name="LabelTitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 48
+text = "PROJETO GAIA"
+
+[node name="LabelSubtitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+text = "Restaure os biomas do planeta"
+
+[node name="Sep" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="BotaoNovoJogo" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "▶  Novo Jogo"
+
+[node name="BotaoCodice" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "📖  Códice de Gaia"
+
+[node name="BotaoSair" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 50)
+text = "✕  Sair"
+
+[connection signal="pressed" from="Panel/VBox/BotaoNovoJogo" to="." method="_on_botao_novo_jogo_pressed"]
+[connection signal="pressed" from="Panel/VBox/BotaoCodice" to="." method="_on_botao_codice_pressed"]
+[connection signal="pressed" from="Panel/VBox/BotaoSair" to="." method="_on_botao_sair_pressed"]

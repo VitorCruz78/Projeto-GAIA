@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://jr2ay8nv3tm6h"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_lobo"]
+[ext_resource type="Script" uid="uid://dv8k2mj5rw9n3" path="res://organismos/carnivoro_lobo.gd" id="2_lobo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/carnivoro_lobo.png" id="3_lobo"]
+
+[node name="Carnivoro_Lobo" unique_id=1001001001 instance=ExtResource("1_lobo")]
+script = ExtResource("2_lobo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1001001002]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_lobo")

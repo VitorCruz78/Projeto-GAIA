@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://yg9pq3rs8ot2l"]
+
+[ext_resource type="Script" uid="uid://sa1jh7we2cv5q" path="res://scenes/cutscene_intro.gd" id="1_intro"]
+
+[node name="CutsceneIntro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_intro")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = 60.0
+offset_right = -80.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LabelTitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 24
+text = "Projeto Gaia"
+
+[node name="Sep" type="HSeparator" parent="Panel/VBox"]
+layout_mode = 2
+
+[node name="LabelTexto" type="RichTextLabel" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = false
+scroll_active = false
+theme_override_font_sizes/normal_font_size = 18
+text = ""
+
+[node name="LabelProgresso" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 12
+text = "1 / 6"
+
+[node name="BotaoContinuar" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 44)
+text = "Próximo →"
+
+[node name="BotaoPular" type="Button" parent="Panel/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 36)
+text = "Pular tudo →→"
+
+[connection signal="pressed" from="Panel/VBox/BotaoContinuar" to="." method="_on_botao_continuar_pressed"]
+[connection signal="pressed" from="Panel/VBox/BotaoPular" to="." method="_on_botao_pular_pressed"]

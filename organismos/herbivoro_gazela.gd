@@ -5,13 +5,13 @@ const LIMITE_X_MAX: float = 1132.0
 const LIMITE_Y_MIN: float = 20.0
 const LIMITE_Y_MAX: float = 628.0
 
-@export var velocidade: float = 80.0
-@export var velocidade_vagando_fator: float = 0.4
-@export var fome_maxima: float = 25.0
-@export var intervalo_reproducao: float = 22.0
+@export var velocidade: float = 100.0
+@export var velocidade_vagando_fator: float = 0.45
+@export var fome_maxima: float = 20.0
+@export var intervalo_reproducao: float = 25.0
 
 var alvo_comida: Node2D = null
-var fome: float = randf_range(0.0, 8.0)
+var fome: float = randf_range(0.0, 6.0)
 var direcao_vagando: Vector2 = Vector2.ZERO
 var tempo_troca_direcao: float = 0.0
 var tempo_reproducao: float = 0.0
@@ -28,12 +28,10 @@ func _process(delta: float) -> void:
 	if fome >= fome_maxima:
 		morrer()
 		return
-
 	tempo_reproducao -= delta
 	if tempo_reproducao <= 0.0 and fome < fome_maxima * 0.4:
 		reproduzir()
 		tempo_reproducao = intervalo_reproducao
-
 	if alvo_comida and is_instance_valid(alvo_comida):
 		var direcao: Vector2 = (alvo_comida.global_position - global_position).normalized()
 		global_position += direcao * velocidade * delta
