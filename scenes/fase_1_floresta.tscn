@@ -70,60 +70,57 @@ offset_top = 55.0
 offset_right = 230.0
 offset_bottom = 592.0
 
-[node name="Margin" type="MarginContainer" parent="UI_Layer/LeftPanel"]
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/LeftPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 8
-
-[node name="VBox" type="VBoxContainer" parent="UI_Layer/LeftPanel/Margin"]
-layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="LabelTituloPainel" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelTituloPainel" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "ECOSSISTEMA"
 
-[node name="Sep0" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="Sep0" type="HSeparator" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 
-[node name="LabelPlantas" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelPlantas" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 text = "🌳 Plantas: 0"
 
-[node name="LabelHerbivoros" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelHerbivoros" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 text = "🐰 Herbívoros: 0"
 
-[node name="LabelCarnivoros" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelCarnivoros" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 text = "🐺 Carnívoros: 0"
 
-[node name="Sep1" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="Sep1" type="HSeparator" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 
-[node name="LabelBarraEquilibrio" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelBarraEquilibrio" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Progresso Equilíbrio:"
 
-[node name="BarraEquilibrio" type="ProgressBar" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="BarraEquilibrio" type="ProgressBar" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 custom_minimum_size = Vector2(0, 18)
 value = 0.0
 show_percentage = true
 
-[node name="Sep2" type="HSeparator" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="Sep2" type="HSeparator" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 
-[node name="LabelEstacao" type="Label" parent="UI_Layer/LeftPanel/Margin/VBox"]
+[node name="LabelEstacao" type="Label" parent="UI_Layer/LeftPanel/VBox"]
 layout_mode = 2
 text = "🌸 Primavera"
 
