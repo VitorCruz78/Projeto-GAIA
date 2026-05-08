@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://lt4ca0px5vo8j"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_serpente"]
+[ext_resource type="Script" uid="uid://gj2v7nd8qc1f5" path="res://organismos/carnivoro_serpente.gd" id="2_serpente"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/carnivoro_serpente.png" id="3_serpente"]
+
+[node name="Carnivoro_Serpente" unique_id=1003001001 instance=ExtResource("1_serpente")]
+script = ExtResource("2_serpente")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1003001002]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("3_serpente")

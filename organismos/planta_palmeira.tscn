@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qy9hf5uc0at3o"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_palmeira"]
+[ext_resource type="Script" uid="uid://ct5b8mf1vn9a0" path="res://organismos/planta_palmeira.gd" id="2_palmeira"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/planta_palmeira.png" id="3_palmeira"]
+
+[node name="Planta_Palmeira" unique_id=1008001001 instance=ExtResource("1_palmeira")]
+script = ExtResource("2_palmeira")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1008001002]
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("3_palmeira")

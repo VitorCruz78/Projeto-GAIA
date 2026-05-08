@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://zh0qr4st9pu3m"]
+
+[ext_resource type="Script" uid="uid://tb2ki8xf3dw6r" path="res://scenes/mapa_mundo.gd" id="1_mapa"]
+
+[node name="MapaMundo" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_mapa")
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopHBox" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="LabelPontos" type="Label" parent="Panel/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 16
+text = "🌿 Pontos de Biodiversidade: 150"
+
+[node name="BotaoCodice" type="Button" parent="Panel/TopHBox"]
+layout_mode = 2
+text = "📖 Códice"
+
+[node name="BotaoMenu" type="Button" parent="Panel/TopHBox"]
+layout_mode = 2
+text = "← Menu"
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 52.0
+offset_left = 40.0
+offset_right = -40.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 24
+
+[node name="LabelTitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 32
+text = "🌍 Mapa do Mundo"
+
+[node name="LabelSubtitulo" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 14
+text = "Selecione um bioma para restaurar"
+
+[node name="BiomaBtns" type="VBoxContainer" parent="Panel/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="BotaoBioma1" type="Button" parent="Panel/VBox/BiomaBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(480, 60)
+text = "🌲 Floresta Temperada
+[DESBLOQUEADO]"
+
+[node name="BotaoBioma2" type="Button" parent="Panel/VBox/BiomaBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(480, 60)
+disabled = true
+text = "🌴 Floresta Tropical
+[BLOQUEADO]"
+
+[node name="BotaoBioma3" type="Button" parent="Panel/VBox/BiomaBtns"]
+layout_mode = 2
+custom_minimum_size = Vector2(480, 60)
+disabled = true
+text = "🌵 Deserto
+[BLOQUEADO]"
+
+[node name="LabelStatus" type="Label" parent="Panel/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Selecione um bioma para começar a restauração."
+
+[connection signal="pressed" from="Panel/VBox/BiomaBtns/BotaoBioma1" to="." method="_on_botao_bioma1_pressed"]
+[connection signal="pressed" from="Panel/VBox/BiomaBtns/BotaoBioma2" to="." method="_on_botao_bioma2_pressed"]
+[connection signal="pressed" from="Panel/VBox/BiomaBtns/BotaoBioma3" to="." method="_on_botao_bioma3_pressed"]
+[connection signal="pressed" from="Panel/TopHBox/BotaoMenu" to="." method="_on_botao_menu_pressed"]
+[connection signal="pressed" from="Panel/TopHBox/BotaoCodice" to="." method="_on_botao_codice_pressed"]

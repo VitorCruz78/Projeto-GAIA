@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://nv6ec2rz7xq0l"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_lagartixa"]
+[ext_resource type="Script" uid="uid://fn9s6kh1xb3e4" path="res://organismos/herbivoro_lagartixa.gd" id="2_lagartixa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/herbivoro_lagartixa.png" id="3_lagartixa"]
+
+[node name="Herbivoro_Lagartixa" unique_id=1005001001 instance=ExtResource("1_lagartixa")]
+script = ExtResource("2_lagartixa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1005001002]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_lagartixa")

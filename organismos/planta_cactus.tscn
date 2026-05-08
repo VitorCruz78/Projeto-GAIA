@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ow7fd3sa8yr1m"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_cactus"]
+[ext_resource type="Script" uid="uid://aw6t8lg3zm4c7" path="res://organismos/planta_cactus.gd" id="2_cactus"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/planta_cactus.png" id="3_cactus"]
+
+[node name="Planta_Cactus" unique_id=1006001001 instance=ExtResource("1_cactus")]
+script = ExtResource("2_cactus")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1006001002]
+scale = Vector2(1.0, 1.0)
+texture = ExtResource("3_cactus")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://mu5db1qy6wp9k"]
+
+[ext_resource type="PackedScene" uid="uid://d3uavd0lhm8vo" path="res://organismo_base.tscn" id="1_gazela"]
+[ext_resource type="Script" uid="uid://bq7p3hf2xe5m8" path="res://organismos/herbivoro_gazela.gd" id="2_gazela"]
+[ext_resource type="Texture2D" path="res://assets/sprites/organismos/herbivoro_gazela.png" id="3_gazela"]
+
+[node name="Herbivoro_Gazela" unique_id=1004001001 instance=ExtResource("1_gazela")]
+script = ExtResource("2_gazela")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1004001002]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_gazela")

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Projeto Gaia"
-run/main_scene="uid://puffhxw8xgo3"
+run/main_scene="res://scenes/menu_principal.tscn"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://autoloads/game_manager.gd"
 
 [display]
 
