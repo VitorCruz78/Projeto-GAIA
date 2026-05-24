@@ -5,10 +5,10 @@ const LIMITE_X_MAX: float = 1132.0
 const LIMITE_Y_MIN: float = 20.0
 const LIMITE_Y_MAX: float = 628.0
 
-@export var velocidade: float = 110.0
+@export var velocidade: float = 58.0
 @export var velocidade_vagando_fator: float = 0.35
-@export var fome_maxima: float = 30.0
-@export var intervalo_reproducao: float = 35.0
+@export var fome_maxima: float = 75.0
+@export var intervalo_reproducao: float = 70.0
 
 var alvo_presa: Node2D = null
 var fome: float = randf_range(0.0, 10.0)
@@ -21,7 +21,7 @@ func _ready() -> void:
 	add_to_group("carnivoros")
 	direcao_vagando = Vector2(randf_range(-1.0, 1.0), randf_range(-1.0, 1.0)).normalized()
 	tempo_troca_direcao = randf_range(1.0, 3.0)
-	tempo_reproducao = randf_range(10.0, intervalo_reproducao)
+	tempo_reproducao = randf_range(30.0, intervalo_reproducao)
 	escolher_alvo()
 
 func _process(delta: float) -> void:
@@ -76,7 +76,7 @@ func comer() -> void:
 	alvo_presa = null
 
 func reproduzir() -> void:
-	if get_tree().get_nodes_in_group("carnivoros").size() >= 8:
+	if get_tree().get_nodes_in_group("carnivoros").size() >= 3:
 		return
 	var filhote: Node = load(scene_file_path).instantiate()
 	filhote.position = position + Vector2(randf_range(-40.0, 40.0), randf_range(-40.0, 40.0))

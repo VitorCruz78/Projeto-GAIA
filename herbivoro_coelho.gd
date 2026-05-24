@@ -7,8 +7,8 @@ const LIMITE_Y_MAX: float = 628.0
 
 @export var velocidade: float = 80.0
 @export var velocidade_vagando_fator: float = 0.4
-@export var fome_maxima: float = 25.0
-@export var intervalo_reproducao: float = 22.0
+@export var fome_maxima: float = 65.0
+@export var intervalo_reproducao: float = 18.0
 
 var alvo_comida: Node2D = null
 var fome: float = randf_range(0.0, 8.0)
@@ -53,6 +53,9 @@ func _vagar(delta: float) -> void:
 	global_position.y = clampf(global_position.y, LIMITE_Y_MIN, LIMITE_Y_MAX)
 
 func escolher_alvo() -> void:
+	if fome < fome_maxima * 0.4:
+		alvo_comida = null
+		return
 	var plantas: Array = get_tree().get_nodes_in_group("comida")
 	if plantas.is_empty():
 		alvo_comida = null

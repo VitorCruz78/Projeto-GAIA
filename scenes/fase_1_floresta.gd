@@ -13,6 +13,7 @@ var tempo_equilibrio: float = 0.0
 var tempo_total: float = 0.0
 var fase_completa: bool = false
 var fase_falhou: bool = false
+var intro_ativa: bool = true
 var renda_timer: float = 0.0
 var estacao_timer: float = 0.0
 var estacao_atual: int = 0  # 0=primavera 1=verão 2=outono 3=inverno
@@ -37,6 +38,7 @@ var notificacao_timer: float = 0.0
 @onready var botao_planta: Button = $UI_Layer/BottomBar/HBox/BotaoPlanta
 @onready var botao_herbivoro: Button = $UI_Layer/BottomBar/HBox/BotaoHerbivoro
 @onready var botao_carnivoro: Button = $UI_Layer/BottomBar/HBox/BotaoCarnivoro
+@onready var panel_intro: Panel = $UI_Layer/PanelIntro
 
 const NOMES_ESTACOES: Array[String] = ["🌸 Primavera", "☀️ Verão", "🍂 Outono", "❄️ Inverno"]
 
@@ -45,13 +47,15 @@ func _ready() -> void:
 	panel_vitoria.visible = false
 	panel_derrota.visible = false
 	panel_notificacao.visible = false
+	panel_intro.visible = true
+	get_tree().paused = true
 	label_bioma.text = "🌲 Floresta Temperada"
 	label_objetivo.text = "Equilíbrio 90s (plantas≥4, herbívoros≥3, carnívoros≥1)"
 	GameManager.pontos_atualizados.connect(_on_pontos_atualizados)
 	atualizar_ui()
 
 func _process(delta: float) -> void:
-	if fase_completa or fase_falhou:
+	if fase_completa or fase_falhou or intro_ativa:
 		return
 	tempo_total += delta
 	estacao_timer += delta
@@ -198,3 +202,8 @@ func _on_botao_derrota_reiniciar_pressed() -> void:
 func _on_botao_notificacao_ok_pressed() -> void:
 	panel_notificacao.visible = false
 	notificacao_timer = 0.0
+
+func _on_botao_intro_comecar_pressed() -> void:
+	intro_ativa = false
+	panel_intro.visible = false
+	get_tree().paused = false

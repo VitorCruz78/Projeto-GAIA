@@ -294,6 +294,50 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 28)
 text = "OK"
 
+[node name="PanelIntro" type="Panel" parent="UI_Layer"]
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PanelIntro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 14
+
+[node name="LabelTitulo" type="Label" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+text = "🌴 FLORESTA TROPICAL"
+
+[node name="Sep" type="HSeparator" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+
+[node name="LabelDescricao" type="Label" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 14
+text = "Uma espécie invasora ameaça este bioma!\n\nSeu objetivo:\n  🌴 Plantas ≥ 4\n  🦌 Herbívoros ≥ 2\n  🐆 Carnívoros ≥ 1\n  ☠️ Zero invasoras\n  Manter tudo por 60 segundos\n\n⚠️ Aos 35s as invasoras aparecem! Use [4] ou botão Remover\ne clique nelas para eliminá-las. Cada remoção = +5 BD.\n\nDica: monte o ecossistema antes das invasoras chegarem!"
+
+[node name="BotaoComecar" type="Button" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 48)
+theme_override_font_sizes/font_size = 16
+text = "🌿 Começar!"
+
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoPlanta" to="." method="_on_botao_planta_pressed"]
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoHerbivoro" to="." method="_on_botao_herbivoro_pressed"]
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoCarnivoro" to="." method="_on_botao_carnivoro_pressed"]
@@ -306,3 +350,4 @@ text = "OK"
 [connection signal="pressed" from="UI_Layer/PanelVitoria/VBox/BotaoVitoriaContinuar" to="." method="_on_botao_vitoria_continuar_pressed"]
 [connection signal="pressed" from="UI_Layer/PanelDerrota/VBox/BotaoEsquecidaReiniciar" to="." method="_on_botao_derrota_reiniciar_pressed"]
 [connection signal="pressed" from="UI_Layer/PanelNotificacao/VBox/BotaoNotificacaoOk" to="." method="_on_botao_notificacao_ok_pressed"]
+[connection signal="pressed" from="UI_Layer/PanelIntro/VBox/BotaoComecar" to="." method="_on_botao_intro_comecar_pressed"]

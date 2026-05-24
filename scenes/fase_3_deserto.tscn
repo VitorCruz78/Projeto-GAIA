@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://ck3tu7vw2sx6p"]
 
 [ext_resource type="Script" path="res://scenes/fase_3_deserto.gd" id="1_f3"]
+[ext_resource type="Texture2D" path="res://assets/tilesets/fundo_deserto.png" id="2_f3"]
 
 [node name="Fase3_Deserto" type="Node2D"]
 script = ExtResource("1_f3")
 
 [node name="Cenario" type="Node2D" parent="."]
 
-[node name="Fundo" type="ColorRect" parent="Cenario"]
-color = Color(0.82, 0.74, 0.48, 1)
+[node name="Fundo" type="TextureRect" parent="Cenario"]
 custom_minimum_size = Vector2(1152, 648)
 offset_right = 1152.0
 offset_bottom = 648.0
 mouse_filter = 2
+texture = ExtResource("2_f3")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="Organismos" type="Node2D" parent="."]
 
@@ -295,6 +298,50 @@ layout_mode = 2
 custom_minimum_size = Vector2(0, 28)
 text = "OK"
 
+[node name="PanelIntro" type="Panel" parent="UI_Layer"]
+anchor_left = 0.25
+anchor_top = 0.1
+anchor_right = 0.75
+anchor_bottom = 0.9
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UI_Layer/PanelIntro"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+theme_override_constants/separation = 14
+
+[node name="LabelTitulo" type="Label" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+text = "🌵 DESERTO"
+
+[node name="Sep" type="HSeparator" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+
+[node name="LabelDescricao" type="Label" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+theme_override_font_sizes/font_size = 14
+text = "O ambiente mais hostil de todos!\n\nSobreviva a 2 secas mantendo:\n  🌵 Plantas ≥ 2\n  🦎 Herbívoros ≥ 2\n  🐍 Carnívoros ≥ 1\n\n🌡️ Secas: reduzem o crescimento das plantas em 3x!\n  1ª seca: ~25s após o início | 2ª seca: ~70s após o início\n\n🧬 Evolução [4] (40 BD): aumenta resistência de todas as espécies.\n   Use antes da 2ª seca!\n\nDica: comece com 4+ cactus. Lagartixa e Serpente são resistentes nativos!"
+
+[node name="BotaoComecar" type="Button" parent="UI_Layer/PanelIntro/VBox"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 48)
+theme_override_font_sizes/font_size = 16
+text = "🌿 Começar!"
+
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoPlanta" to="." method="_on_botao_planta_pressed"]
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoHerbivoro" to="." method="_on_botao_herbivoro_pressed"]
 [connection signal="pressed" from="UI_Layer/BottomBar/HBox/BotaoCarnivoro" to="." method="_on_botao_carnivoro_pressed"]
@@ -307,3 +354,4 @@ text = "OK"
 [connection signal="pressed" from="UI_Layer/PanelVitoria/VBox/BotaoVitoriaContinuar" to="." method="_on_botao_vitoria_continuar_pressed"]
 [connection signal="pressed" from="UI_Layer/PanelDerrota/VBox/BotaoEsquecidaReiniciar" to="." method="_on_botao_derrota_reiniciar_pressed"]
 [connection signal="pressed" from="UI_Layer/PanelNotificacao/VBox/BotaoNotificacaoOk" to="." method="_on_botao_notificacao_ok_pressed"]
+[connection signal="pressed" from="UI_Layer/PanelIntro/VBox/BotaoComecar" to="." method="_on_botao_intro_comecar_pressed"]

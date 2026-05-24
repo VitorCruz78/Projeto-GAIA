@@ -21,6 +21,7 @@ var notificacao_timer: float = 0.0
 var TEMPO_META: float = 60.0
 var LIMITE_INVASORAS: int = 18
 var modo_remocao: bool = false
+var intro_ativa: bool = true
 
 @onready var organismos: Node2D = $Organismos
 @onready var label_pontos: Label = $UI_Layer/TopBar/HBox/LabelPontos
@@ -40,19 +41,22 @@ var modo_remocao: bool = false
 @onready var botao_herbivoro: Button = $UI_Layer/BottomBar/HBox/BotaoHerbivoro
 @onready var botao_carnivoro: Button = $UI_Layer/BottomBar/HBox/BotaoCarnivoro
 @onready var botao_remover: Button = $UI_Layer/BottomBar/HBox/BotaoRemover
+@onready var panel_intro: Panel = $UI_Layer/PanelIntro
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	panel_vitoria.visible = false
 	panel_derrota.visible = false
 	panel_notificacao.visible = false
+	panel_intro.visible = true
+	get_tree().paused = true
 	label_bioma.text = "🌴 Floresta Tropical"
-	label_objetivo.text = "Elimine invasoras e mantenha equilíbrio 60s"
+	label_objetivo.text = "Elimine invasoras | plantas≥4, herbívoros≥2, carnívoros≥1 | 60s"
 	GameManager.pontos_atualizados.connect(_on_pontos_atualizados)
 	atualizar_ui()
 
 func _process(delta: float) -> void:
-	if fase_completa or fase_falhou:
+	if fase_completa or fase_falhou or intro_ativa:
 		return
 	tempo_total += delta
 	renda_timer += delta
@@ -135,7 +139,7 @@ func spawnar_invasoras() -> void:
 	invasora_apareceu = true
 	for i in range(3):
 		var inv: Node = INVASORA_CENA.instantiate()
-		inv.position = Vector2(randf_range(100.0, 1050.0), randf_range(60.0, 580.0))
+		inv.position = Vector2(randf_range(240.0, 1050.0), randf_range(60.0, 580.0))
 		organismos.add_child(inv)
 	mostrar_notificacao("⚠️ ALERTA: Espécie invasora detectada! Use [4] ou botão Remover para eliminá-las!")
 
@@ -234,3 +238,8 @@ func _on_botao_derrota_reiniciar_pressed() -> void:
 
 func _on_botao_notificacao_ok_pressed() -> void:
 	panel_notificacao.visible = false; notificacao_timer = 0.0
+
+func _on_botao_intro_comecar_pressed() -> void:
+	intro_ativa = false
+	panel_intro.visible = false
+	get_tree().paused = false

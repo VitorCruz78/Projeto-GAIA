@@ -2,7 +2,7 @@ extends Area2D
 
 @export var custo_biodiversidade: int = 10
 @export var tipo: String = "Produtor"
-@export var intervalo_crescimento: float = 25.0
+@export var intervalo_crescimento: float = 14.0
 @export var max_plantas: int = 20
 
 var tempo_crescimento: float = 0.0
