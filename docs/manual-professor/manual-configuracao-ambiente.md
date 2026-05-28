@@ -58,3 +58,25 @@ URL oficial: [https://godotengine.org/download](https://godotengine.org/download
 **Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
 
 ---
+
+### 3.2 macOS
+
+1. Acesse [https://godotengine.org/download/macos/](https://godotengine.org/download/macos/)
+2. Baixe o arquivo **"Godot Engine - macOS (Universal)"** (ex.: `Godot_v4.6-stable_macos.universal.zip`)
+   - A build Universal funciona em Macs com processador Intel **e** Apple Silicon (M1/M2/M3)
+3. Extraia o ZIP — o resultado é `Godot.app`
+4. Arraste `Godot.app` para a pasta `/Applications`
+5. Na primeira execução, o Gatekeeper bloqueará o app. Para liberar:
+   - Abra **System Settings → Privacy & Security**
+   - Role até a mensagem `"Godot" was blocked from use...`
+   - Clique em **Open Anyway**
+   - Confirme no diálogo seguinte
+
+> **Alternativa via terminal:**
+> ```bash
+> xattr -dr com.apple.quarantine /Applications/Godot.app
+> ```
+
+**Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
+
+---
