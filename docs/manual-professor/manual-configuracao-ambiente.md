@@ -148,3 +148,46 @@ ProjetoGaia/
 6. O editor da Godot abrirá com o projeto carregado
 
 ---
+
+## 5. Executando o Jogo
+
+Com o projeto aberto no editor da Godot:
+
+1. Pressione **F5** (ou clique no botão ▶ **Run Project** na barra superior direita)
+2. A cena principal `scenes/menu_principal.tscn` será carregada automaticamente
+3. Uma janela separada abrirá exibindo o **Menu Principal** do jogo
+
+> A cena de entrada está configurada em `project.godot`:
+> `run/main_scene = "res://scenes/menu_principal.tscn"`
+
+**Resultado esperado:** Menu principal do Projeto Gaia é exibido na janela de jogo.
+
+---
+
+## 6. Estrutura de Pastas do Projeto
+
+```
+projeto-gaia/
+├── project.godot              # Configuração do projeto — ponto de entrada para a Godot
+├── autoloads/
+│   └── game_manager.gd        # Singleton global (pontuação, estado de jogo)
+├── scenes/                    # Todas as cenas do jogo (.tscn)
+│   ├── menu_principal.tscn    # Cena inicial (main_scene)
+│   ├── mapa_mundo.tscn        # Seleção de bioma/fase
+│   ├── fase_1_floresta.tscn   # Fase 1 — Floresta Temperada
+│   ├── fase_2_tropical.tscn   # Fase 2 — Floresta Tropical
+│   ├── fase_3_deserto.tscn    # Fase 3 — Deserto
+│   ├── cutscene_intro.tscn    # Cutscene de introdução narrativa
+│   └── codice_gaia.tscn       # Enciclopédia educacional in-game
+├── scripts/                   # Scripts GDScript reutilizáveis e desacoplados
+├── assets/
+│   ├── sprites/               # Sprites dos personagens, organismos e UI
+│   └── tilesets/              # Tilesets dos biomas
+├── systems/                   # Sistemas globais (ex.: controle de tempo, balanceamento)
+└── organismos/                # Entidades dos ecossistemas (plantas, herbívoros, etc.)
+```
+
+> **Arquivos de script:** Cada cena `.tscn` tem um script `.gd` correspondente de mesmo nome
+> (ex.: `fase_1_floresta.tscn` ↔ `scenes/fase_1_floresta.gd`).
+
+---
