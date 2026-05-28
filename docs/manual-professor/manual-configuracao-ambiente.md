@@ -191,3 +191,36 @@ projeto-gaia/
 > (ex.: `fase_1_floresta.tscn` ↔ `scenes/fase_1_floresta.gd`).
 
 ---
+
+## 7. Solução de Problemas Comuns
+
+### 7.1 Tabela de Erros
+
+| Problema | Causa provável | Solução |
+|---|---|---|
+| "project.godot não encontrado" ao importar | ZIP extraído de forma incorreta ou incompleta | Re-extrair o ZIP; confirmar que `project.godot` está na raiz da pasta |
+| Tela completamente preta ao rodar o jogo | Driver de vídeo não suporta Vulkan ou D3D12 | Ver seção 7.2 (Trocar Renderer) |
+| Godot não abre no macOS ("app danificado" ou "não pode ser aberto") | Gatekeeper bloqueou o executável | System Settings → Privacy & Security → **Open Anyway** |
+| Erro de permissão ao executar no Linux | Arquivo sem flag de execução | `chmod +x Godot_v4.6-stable_linux.x86_64` |
+| Assets com ícone de erro no FileSystem | Reimportação incompleta ou interrompida | No editor: **Project → Reimport All** |
+| Jogo roda mas está muito lento | Renderer Vulkan/D3D12 sobrecarrega o hardware | Ver seção 7.2 (Trocar Renderer) |
+| Janela do jogo não abre, sem mensagem de erro | Resolução ou display problem | **Project → Project Settings → Display → Window** e reduzir a resolução |
+
+### 7.2 Trocar para o Renderer Compatibility (hardware antigo)
+
+O Godot 4.x usa Vulkan ou D3D12 por padrão. Para hardware sem suporte, use o renderer
+`Compatibility` (baseado em OpenGL 3.3):
+
+1. No editor, vá em **Project → Project Settings**
+2. Na barra de busca, digite `renderer`
+3. Em **Rendering → Renderer → Rendering Method**, selecione **`mobile`** ou **`gl_compatibility`**
+4. Reinicie o editor quando solicitado
+
+> Alternativamente, inicie a Godot pela linha de comando com a flag:
+> ```bash
+> ./Godot_v4.6-stable_linux.x86_64 --rendering-driver opengl3
+> ```
+
+---
+
+*Manual gerado para o Projeto Gaia — Versão 1.0*
