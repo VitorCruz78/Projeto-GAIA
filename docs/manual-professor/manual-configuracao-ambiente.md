@@ -38,3 +38,23 @@ Antes de iniciar, verifique que seu computador atende aos seguintes requisitos:
 - Acesso à internet para baixar a Godot Engine
 
 ---
+
+## 3. Instalação da Godot Engine 4.6
+
+Baixe sempre a versão **4.6 Standard** (não a versão .NET/C#).  
+URL oficial: [https://godotengine.org/download](https://godotengine.org/download)
+
+### 3.1 Windows
+
+1. Acesse [https://godotengine.org/download/windows/](https://godotengine.org/download/windows/)
+2. Baixe o arquivo **"Godot Engine - Windows (64-bit)"** (ex.: `Godot_v4.6-stable_win64.exe.zip`)
+3. Extraia o ZIP em uma pasta de sua escolha (ex.: `C:\Ferramentas\Godot\`)
+4. O executável extraído (`Godot_v4.6-stable_win64.exe`) **não requer instalação** — é portátil
+5. Execute o arquivo diretamente; o Project Manager abrirá
+
+> **Permissão do Windows Defender:** Se o SmartScreen bloquear a execução, clique em
+> **"Mais informações" → "Executar assim mesmo"**.
+
+**Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
+
+---
