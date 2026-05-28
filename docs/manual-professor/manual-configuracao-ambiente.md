@@ -80,3 +80,36 @@ URL oficial: [https://godotengine.org/download](https://godotengine.org/download
 **Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
 
 ---
+
+### 3.3 Linux
+
+1. Acesse [https://godotengine.org/download/linux/](https://godotengine.org/download/linux/)
+2. Baixe o arquivo **"Godot Engine - Linux (64-bit)"**  
+   (ex.: `Godot_v4.6-stable_linux.x86_64.zip`)
+3. Extraia o ZIP e torne o executável executável:
+
+```bash
+unzip Godot_v4.6-stable_linux.x86_64.zip
+chmod +x Godot_v4.6-stable_linux.x86_64
+```
+
+4. Execute diretamente:
+
+```bash
+./Godot_v4.6-stable_linux.x86_64
+```
+
+> **Opcional — adicionar ao PATH:**
+> ```bash
+> sudo mv Godot_v4.6-stable_linux.x86_64 /usr/local/bin/godot4
+> # A partir disso, basta digitar: godot4
+> ```
+
+> **Dependências (Ubuntu/Debian):** Se o app não abrir, instale as dependências de Vulkan:
+> ```bash
+> sudo apt update && sudo apt install libvulkan1 mesa-vulkan-drivers
+> ```
+
+**Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
+
+---
