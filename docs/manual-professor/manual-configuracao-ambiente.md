@@ -113,3 +113,38 @@ chmod +x Godot_v4.6-stable_linux.x86_64
 **Verificação:** A janela "Project Manager" da Godot abre sem mensagens de erro.
 
 ---
+
+## 4. Configuração do Projeto
+
+### 4.1 Extraindo o arquivo ZIP
+
+1. Crie uma pasta dedicada para o projeto, por exemplo:
+   - Windows: `C:\Projetos\ProjetoGaia\`
+   - macOS/Linux: `~/Documentos/ProjetoGaia/`
+2. Extraia **todo o conteúdo** do arquivo `projeto-gaia.zip` dentro dessa pasta
+3. Confirme que o arquivo `project.godot` está na **raiz** da pasta extraída:
+
+```
+ProjetoGaia/
+├── project.godot      ← deve estar aqui
+├── autoloads/
+├── scenes/
+├── scripts/
+├── assets/
+└── ...
+```
+
+> **Atenção:** Alguns descompactadores criam uma subpasta extra ao extrair.  
+> Se o `project.godot` estiver em `ProjetoGaia/projeto-gaia/project.godot`, mova os arquivos  
+> um nível acima.
+
+### 4.2 Importando o projeto na Godot
+
+1. Abra a Godot Engine — o **Project Manager** será exibido
+2. Clique em **Import**
+3. Navegue até a pasta onde o projeto foi extraído e selecione o arquivo `project.godot`
+4. Clique em **Import & Edit**
+5. Aguarde a importação dos assets — na primeira vez, esse processo pode levar **1 a 2 minutos**
+6. O editor da Godot abrirá com o projeto carregado
+
+---
