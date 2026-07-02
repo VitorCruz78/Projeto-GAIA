@@ -8,5 +8,5 @@
 script = ExtResource("2_lagartixa")
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0" unique_id=1005001002]
-scale = Vector2(1.2, 1.2)
+scale = Vector2(1.0, 1.0)
 texture = ExtResource("3_lagartixa")
